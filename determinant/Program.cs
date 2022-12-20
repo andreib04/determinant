@@ -31,6 +31,11 @@ namespace determinant
                 }
             }
 
+            if(linii != coloane)
+            {
+                Console.WriteLine("Matricea trebuie sa fie patratica!");
+            }
+
             double determinant = calculatorDeterminant(A);
             Console.WriteLine($"Rezultatul este: {determinant}");
 
@@ -40,11 +45,6 @@ namespace determinant
         {
             double linii = A.GetLength(0);
             double coloane = A.GetLength(1);
-
-            if(linii != coloane)
-            {
-                Console.WriteLine("Matricea trebuie sa fie patratica pentru a-i fi calculat determinantul");
-            }
 
             if (linii == 1 && coloane == 1)
             {
