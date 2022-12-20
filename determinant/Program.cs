@@ -21,6 +21,10 @@ namespace determinant
             coloane = int.Parse(t[1]);
 
             A = new double[linii, coloane];
+            if(linii != coloane)
+            {
+                Console.WriteLine("Matricea trebuie sa fie patratica!");
+            }
 
             for(int i = 0; i < linii; i++)
             {
@@ -29,11 +33,6 @@ namespace determinant
                 {
                     A[i, j] = int.Parse(t[j]);
                 }
-            }
-
-            if(linii != coloane)
-            {
-                Console.WriteLine("Matricea trebuie sa fie patratica!");
             }
 
             double determinant = calculatorDeterminant(A);
@@ -75,16 +74,11 @@ namespace determinant
             for(int i = 0, linieSM = 0; i < l; i++)
             {
                 if(i == linieT)
-                {
                     continue;
-                }
                 for(int j = 0, coloanaSM =0; j<c; j++)
                 {
                     if (j == coloanaT)
-                    {
                         continue;
-                    }
-
                     submatrice[linieSM, coloanaSM] = A[i, j];
                     coloanaSM++;
                 }
